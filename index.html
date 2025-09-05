@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دعوة للانضمام</title>
+
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: "Cairo", sans-serif;
+      background: url("imgs/4.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth; /* ✅ smooth scrolling */
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    /* top nav */
+    .top-buttons {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 100;
+    }
+
+    .top-buttons a {
+      background: #333;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .top-buttons a:hover { background: #555; }
+
+    /* --- main invitation card --- */
+    .container { text-align: center; perspective: 1000px; }
+    .circle {
+      width: 120px; height: 120px; border-radius: 50%;
+      background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
+      margin: 0 auto 20px; display: flex;
+      justify-content: center; align-items: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      overflow: hidden; position: relative; z-index: 2;
+      border: 3px solid #25D366;
+      transition: transform 0.3s ease;
+    }
+    .circle:hover { transform: scale(1.1); }
+    .circle img { width: 130%; height: auto; object-fit: cover; transform: translateY(10px); }
+
+    .card {
+      width: 280px; height: 220px;
+      position: relative; transform-style: preserve-3d;
+      transition: transform 0.8s ease; cursor: pointer; margin: 0 auto;
+    }
+    .card.flipped { transform: rotateY(180deg); }
+    .card-side {
+      position: absolute; width: 100%; height: 100%;
+      backface-visibility: hidden; border-radius: 20px; padding: 20px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.7);
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      background: #1e1e1e;
+    }
+    .card-front h2 { font-size: 1.3rem; margin-bottom: 15px; }
+    .card-front p { font-size: 1rem; color: #bbb; }
+    .card-back { transform: rotateY(180deg); gap: 20px; }
+
+    .btns {
+      display: flex; flex-direction: column;
+      gap: 10px; width: 100%; align-items: center;
+    }
+    .btn {
+      text-decoration: none; font-size: 1rem; padding: 10px 16px;
+      border-radius: 12px; font-weight: bold; transition: 0.3s ease;
+      display: flex; align-items: center; gap: 8px;
+      width: 80%; justify-content: center;
+    }
+    .btn.whatsapp { background: #25D366; color: white; }
+    .btn.whatsapp:hover { background: #1ebe5b; }
+    .btn.youtube { background: #FF0000; color: white; }
+    .btn.youtube:hover { background: #cc0000; }
+    .btn.tel { background: #007BFF; color: white; }
+    .btn.tel:hover { background: #0056b3; }
+
+    /* --- reviews gallery --- */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 15px; width:100%; }
+    .gallery img { width: 100%; border-radius: 10px; }
+
+    /* --- future kids --- */
+    .kids { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 20px; width:100%; }
+    .kid { background:#1e1e1e; padding: 10px; border-radius: 12px; }
+    .kid img { width: 100%; aspect-ratio: 1/1; border-radius: 8px; object-fit: cover; }
+    .kid p { margin-top: 8px; font-size: 0.9rem; color:#ccc; }
+
+    /* ✅ scroll-to-top button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #ff4747;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: none;
+      z-index: 200;
+      transition: 0.3s ease;
+    }
+    #scrollTopBtn:hover { background: #cc0000; }
+  </style>
+</head>
+<body>
+  <!-- top nav -->
+  <div class="top-buttons">
+    <a href="#reviews">اراء بعض المتابعين</a>
+    <a href="#future">❤بعض من شباب المستقبل</a>
+  </div>
+
+  <!-- section 1: invitation -->
+  <section id="home">
+    <div class="container">
+      <div class="circle">
+        <img src="imgs/3.jpeg" alt="Teacher">
+      </div>
+
+      <div class="card" id="flipCard">
+        <div class="card-side card-front">
+          <h2>ندعوك للانضمام معي الآن</h2>
+          <p>ولنبدأ رياضيات ومتعة عالية 🚀</p>
+        </div>
+
+        <div class="card-side card-back">
+          <div class="btns">
+            <a href="https://wa.me/+201004774199" class="btn whatsapp" target="_blank">
+              <i class="fab fa-whatsapp"></i> واتساب
+            </a>
+            <a href="https://www.youtube.com/@ay4math" class="btn youtube" target="_blank">
+              <i class="fab fa-youtube"></i> يوتيوب
+            </a>
+            <a href="tel:+201004774199" class="btn tel">
+              📞 اتصل بي
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section 2: reviews -->
+  <section id="reviews">
+    <h1>📷 اراء بعض المتابعين</h1>
+    <div class="gallery">
+      <img src="imgs/rev1.jpeg">
+      <img src="imgs/rev2.jpeg">
+      <img src="imgs/rev3.jpeg">
+      <img src="imgs/rev4.jpeg">
+      <img src="imgs/rev5.jpeg">
+      <img src="imgs/rev6.jpeg">
+      <img src="imgs/rev7.jpeg">
+      <img src="imgs/rev8.jpeg">
+      <img src="imgs/rev9.jpeg">
+      <img src="imgs/rev10.jpeg">
+      <img src="imgs/rev11.jpeg">
+      <img src="imgs/rev13.jpeg">
+    </div>
+  </section>
+
+  <!-- section 3: future kids -->
+  <section id="future">
+    <h1>❤ بعض من شباب المستقبل</h1>
+    <div class="kids">
+      <div class="kid"><img src="imgs/kid1.jpeg"></div>
+      <div class="kid"><img src="imgs/kid2.jpeg"></div>
+      <div class="kid"><img src="imgs/kid3.jpeg"></div>
+      <div class="kid"><img src="imgs/kid4.jpeg"></div>
+      <div class="kid"><img src="imgs/kid5.jpeg"></div>
+      <div class="kid"><img src="imgs/kid6.jpeg"></div>
+      <div class="kid"><img src="imgs/kid7.jpeg"></div>
+      <div class="kid"><img src="imgs/kid8.jpeg"></div>
+      <div class="kid"><img src="imgs/kid9.jpeg"></div>
+      <div class="kid"><img src="imgs/kid10.jpeg"></div>
+      <div class="kid"><img src="imgs/kid11.jpeg"></div>
+      <div class="kid"><img src="imgs/kid12.jpeg"></div>
+      <div class="kid"><img src="imgs/kid13.jpeg"></div>
+      <div class="kid"><img src="imgs/kid14.jpeg"></div>
+      <div class="kid"><img src="imgs/kid15.jpeg"></div>
+      <div class="kid"><img src="imgs/kid16.jpeg"></div>
+      <div class="kid"><img src="imgs/kid17.jpeg"></div>
+      <div class="kid"><img src="imgs/kid18.jpeg"></div>
+      <div class="kid"><img src="imgs/kid19.jpeg"></div>
+      <div class="kid"><img src="imgs/kid20.jpeg"></div>
+      <div class="kid"><img src="imgs/kid21.jpeg"></div>
+      <div class="kid"><img src="imgs/kid22.jpeg"></div>
+      <div class="kid"><img src="imgs/kid23.jpeg"></div>
+      <div class="kid"><img src="imgs/kid24.jpeg"></div>
+      <div class="kid"><img src="imgs/kid25.jpeg"></div>
+    </div>
+  </section>
+
+  <!-- ✅ scroll to top button -->
+  <button id="scrollTopBtn">⬆️ رجوع للأعلى</button>
+
+  <script>
+    const card = document.getElementById("flipCard");
+    card.addEventListener("click", () => {
+      card.classList.toggle("flipped");
+    });
+
+    // ✅ scroll to top button behavior
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = () => {
+      if (document.documentElement.scrollTop > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+    scrollBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
+</body>
+</html>
